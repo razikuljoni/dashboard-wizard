@@ -1,0 +1,169 @@
+{
+    "token": {
+        "colorPrimary": "#fdc112",
+        "colorInfo": "#fdc112",
+        "colorPrimaryBgHover": "#fff5b3",
+        "colorPrimaryBorder": "#fff080",
+        "colorPrimaryBorderHover": "#ffe450",
+        "colorPrimaryHover": "#ffdb29",
+        "colorPrimaryActive": "#d1a800",
+        "colorPrimaryTextHover": "#fdc112",
+        "colorPrimaryText": "#fdc112",
+        "colorPrimaryTextActive": "#d1a800"
+    },
+    "components": {
+        "Calendar": {
+            "itemActiveBg": "#fdc112",
+            "colorBgContainer": "rgb(255,255,255)",
+            "controlItemBgHover": "rgb(252,233,165)",
+            "colorPrimary": "rgb(0,0,0)"
+        },
+        "Menu": {
+            "itemColor": "rgb(0,0,0)",
+            "groupTitleColor": "rgb(0,0,0)",
+            "itemSelectedColor": "rgb(0,0,0)",
+            "darkGroupTitleColor": "rgb(0,0,0)",
+            "darkItemColor": "rgb(0,0,0)",
+            "darkItemBg": "#fdc112",
+            "darkItemDisabledColor": "rgba(0,0,0,0.5)",
+            "darkItemSelectedColor": "rgb(0,0,0)",
+            "itemSelectedBg": "rgb(252,233,165)",
+            "itemHoverColor": "rgb(0,0,0,0.8)",
+            "darkSubMenuItemBg": "rgb(255, 219, 88)",
+            "itemBg": "#fdc112",
+            "subMenuItemBg": "rgb(255, 219, 88)",
+            "subMenuItemSelectedColor": "rgb(0,0,0)",
+            "colorTextLightSolid": "rgb(0,0,0)",
+            "itemActiveBg": "rgb(252,233,165)",
+            "darkItemHoverColor": "rgb(0,0,0)",
+            "colorSplit": "rgba(255,255,255,0.83)",
+            "darkItemSelectedBg": "rgb(252,233,165)",
+            "darkPopupBg": "rgb(250,212,78)",
+            "colorBgElevated": "rgb(250,212,78)",
+            "darkItemHoverBg": "rgb(252,233,165)"
+        },
+        "Pagination": {
+            "itemActiveBg": "#fdc112",
+            "colorBgContainer": "rgb(255,255,255)",
+            "colorBorder": "#fdc112",
+            "itemBg": "rgb(255,255,255)",
+            "itemInputBg": "rgb(255,255,255)",
+            "itemLinkBg": "#fdc112",
+            "controlOutline": "#fdc112",
+            "colorPrimaryHover": "rgb(0,0,0)",
+            "colorPrimaryBorder": "rgb(0,0,0)",
+            "colorPrimary": "rgb(0,0,0)"
+        },
+        "Dropdown": {
+            "colorBgElevated": "rgb(255,255,255)",
+            "colorPrimary": "#fdc112",
+            "controlItemBgHover": "rgb(252,233,165)",
+            "controlItemBgActiveHover": "rgb(252,233,165)"
+        },
+        "DatePicker": {
+            "colorBgElevated": "rgb(255,255,255)",
+            "colorBorder": "#fdc112",
+            "cellHoverBg": "#fdc112",
+            "hoverBorderColor": "#fdc112",
+            "multipleItemBg": "#fdc112",
+            "multipleItemBorderColor": "#fdc112"
+        },
+        "Mentions": {
+            "colorBgContainer": "rgb(255,255,255)",
+            "colorBgElevated": "rgb(255,255,255)",
+            "colorBorder": "#fdc112",
+            "colorTextPlaceholder": "rgba(0,0,0,0.8)",
+            "activeBorderColor": "#fdc112",
+            "hoverBorderColor": "#fdc112"
+        },
+        "Select": {
+            "activeBorderColor": "#fdc112",
+            "activeOutlineColor": "#fdc112",
+            "colorBgContainer": "rgb(255,255,255)",
+            "colorBgElevated": "rgb(255,255,255)",
+            "colorBorder": "#fdc112",
+            "optionActiveBg": "rgb(252,233,165)",
+            "multipleItemBorderColor": "#fdc112",
+            "optionSelectedBg": "#fdc112",
+            "optionSelectedColor": "rgb(0,0,0)",
+            "selectorBg": "rgb(255,255,255)"
+        },
+        "Transfer": {
+            "colorBgContainer": "rgb(255,255,255)",
+            "colorBorder": "#fdc112",
+            "controlItemBgHover": "rgb(252,233,165)"
+        },
+        "Popover": {
+            "colorBgElevated": "rgb(252,233,165)"
+        },
+        "Segmented": {
+            "itemActiveBg": "rgb(252,233,165)",
+            "itemColor": "rgb(0,0,0)",
+            "itemHoverBg": "rgb(252,233,165)",
+            "itemHoverColor": "rgb(0,0,0)",
+            "itemSelectedBg": "#fdc112",
+            "itemSelectedColor": "rgb(0,0,0)",
+            "trackBg": "rgb(255,255,255)"
+        },
+        "Tabs": {
+            "itemSelectedColor": "rgb(0,0,0)",
+            "itemHoverColor": "rgb(0,0,0)",
+            "itemColor": "rgb(0,0,0)",
+            "itemActiveColor": "rgb(0,0,0)",
+            "inkBarColor": "#fdc112",
+            "cardBg": "rgb(255,255,255)",
+            "colorBgContainer": "#fdc112"
+        },
+        "Alert": {
+            "colorText": "rgb(0,0,0)",
+            "colorTextHeading": "rgb(0,0,0)"
+        },
+        "Message": {
+            "contentBg": "rgb(255,255,255)"
+        },
+        "Notification": {
+            "colorBgElevated": "rgb(255,255,255)"
+        },
+        "Spin": {
+            "dotSize": 50,
+            "dotSizeLG": 80,
+            "dotSizeSM": 30,
+            "contentHeight": 1080
+        },
+        "Form": {
+            "labelColor": "rgb(0,0,0)",
+            "itemMarginBottom": 10
+        },
+        "Input": {
+            "activeBorderColor": "#fdc112",
+            "hoverBorderColor": "rgb(252,233,165)",
+            "colorBgContainer": "rgb(255,255,255)",
+            "colorTextDisabled": "rgba(0,0,0,0.8)",
+            "colorTextPlaceholder": "rgba(0,0,0,0.5)",
+            "activeBg": "rgba(255,255,255,0.8)",
+            "colorBorder": "rgb(253,193,18)"
+        },
+        "Table": {
+            "headerBorderRadius": 0
+        },
+        "Layout": {
+            "headerBg": "#fdc112",
+            "siderBg": "#fdc112",
+            "triggerBg": "rgb(255,255,255,0.9)",
+            "lightTriggerBg": "rgb(255,255,255,0.9)",
+            "lightTriggerColor": "rgb(0,0,0)",
+            "triggerColor": "rgb(0,0,0)",
+            "headerColor": "rgba(0,0,0,0.88)",
+            "colorText": "rgb(0,0,0)",
+            "footerBg": "rgb(255,255,255,0.9)"
+        },
+        "Collapse": {
+            "headerPadding": "8px",
+            "contentPadding": "0px",
+            "headerBg": "rgb(255,255,255)",
+            "colorTextHeading": "rgb(0,0,0)",
+            "colorBorder": "rgb(255,255,255)"
+        }
+    },
+    "algorithm": ["compact"]
+}

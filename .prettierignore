@@ -1,0 +1,11 @@
+node_modules
+dist
+build
+.turbo
+.next
+public
+coverage
+pnpm-lock.yaml
+.husky
+.vite
+*.log

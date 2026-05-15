@@ -1,0 +1,86 @@
+{
+    "name": "mm-automation-bat",
+    "private": true,
+    "version": "1.1.1",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "debug": "vite --host --port 5173",
+        "clean": "rm -rf dist .vite",
+        "build": "npm run clean && vite build",
+        "build:dev": "npm run clean && vite build --mode development",
+        "lint": "eslint .",
+        "lint:errors": "eslint --quiet .",
+        "lint:fix": "eslint . --fix",
+        "format": "prettier --write \"src/**/*.{js,jsx,css,scss,json,md}\"",
+        "format:check": "prettier --check \"src/**/*.{js,jsx,css,scss,json,md}\"",
+        "prepare": "husky install",
+        "preview": "vite preview",
+        "security:audit": "npm audit",
+        "security:check": "pnpm security:audit && pnpm outdated"
+    },
+    "lint-staged": {
+        "src/**/*.{js,jsx,json,css,scss,md}": [
+            "pnpm run format:check --silent || pnpm run format --silent",
+            "pnpm run lint:fix --silent"
+        ]
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "npx --no-install lint-staged"
+        }
+    },
+    "dependencies": {
+        "@ant-design/icons": "^6.1.1",
+        "@googlemaps/markerclusterer": "^2.6.2",
+        "@react-google-maps/api": "^2.20.8",
+        "@reduxjs/toolkit": "^2.11.2",
+        "@tanstack/react-virtual": "^3.13.23",
+        "@vercel/analytics": "^1.6.1",
+        "@vis.gl/react-google-maps": "^1.8.2",
+        "antd": "^5.29.3",
+        "chart.js": "^4.5.1",
+        "dayjs": "^1.11.20",
+        "echarts": "^5.6.0",
+        "echarts-for-react": "^3.0.6",
+        "export-to-csv": "^1.4.0",
+        "html-to-image": "^1.11.13",
+        "react": "^18.3.1",
+        "react-chartjs-2": "^5.3.1",
+        "react-dom": "^18.3.1",
+        "react-error-boundary": "^5.0.0",
+        "react-google-charts": "^5.2.1",
+        "react-icons": "^5.6.0",
+        "react-multi-select-component": "^4.3.4",
+        "react-redux": "^9.2.0",
+        "react-router-dom": "^6.30.3",
+        "react-virtualized-auto-sizer": "^1.0.26",
+        "react-window": "^1.8.11",
+        "recharts": "^2.15.4",
+        "redux-persist": "^6.0.0",
+        "redux-persist-transform-compress": "^4.2.0",
+        "socket.io-client": "^4.8.3"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.39.4",
+        "@types/react": "^18.3.28",
+        "@types/react-dom": "^18.3.7",
+        "@vitejs/plugin-react": "^4.7.0",
+        "autoprefixer": "^10.4.27",
+        "baseline-browser-mapping": "^2.10.13",
+        "eslint": "^9.39.4",
+        "eslint-config-prettier": "^9.1.2",
+        "eslint-plugin-prettier": "^5.5.5",
+        "eslint-plugin-react": "^7.37.5",
+        "eslint-plugin-react-hooks": "^5.2.0",
+        "eslint-plugin-react-refresh": "^0.4.26",
+        "globals": "^15.15.0",
+        "husky": "^8.0.3",
+        "lint-staged": "^14.0.1",
+        "postcss": "^8.5.8",
+        "prettier": "^3.8.1",
+        "tailwindcss": "^3.4.19",
+        "vite": "^7.3.1"
+    },
+    "packageManager": "pnpm@11.1.2+sha512.415a1cc25974731e75455c1468371be74c5aa5fb7621b50d4056d222451609f11412f23fd602e6169f1e060466641f798597e1be961a10688836a67b16569499"
+}
