@@ -194,51 +194,51 @@ const AttendanceChart = ({ data }) => {
                                 {attendanceGroups.map(group => (
                                     <div
                                         key={group.label}
-                                        className="flex items-center justify-between border-b border-gray-50 pb-0.5 last:border-0"
+                                        className="flex items-center justify-between border-b border-zinc-100 pb-0.5 last:border-0"
                                     >
-                                        <div className="w-12 font-bold text-gray-700">
+                                        <div className="w-12 font-bold text-zinc-700">
                                             {group.label}
                                         </div>
                                         <div className="flex-1 grid grid-cols-4 gap-x-1 items-center ml-2">
                                             <div className="flex items-center gap-1">
-                                                <span className="text-gray-400">Total:</span>
-                                                <span className="font-semibold text-gray-700">
+                                                <span className="text-zinc-400">Total:</span>
+                                                <span className="font-semibold text-zinc-700">
                                                     {group.total}
                                                 </span>
                                             </div>
                                             <div className="flex items-center gap-1">
                                                 <div
-                                                    className="w-2 h-2 rounded-sm"
+                                                    className="size-2 rounded-sm"
                                                     style={{
                                                         backgroundColor: CHART_COLORS.present,
                                                     }}
                                                 />
-                                                <span className="text-gray-400">Present:</span>
-                                                <span className="font-semibold text-gray-700">
+                                                <span className="text-zinc-400">Present:</span>
+                                                <span className="font-semibold text-zinc-700">
                                                     {group.present}
                                                 </span>
                                             </div>
                                             <div className="flex items-center gap-1">
                                                 <div
-                                                    className="w-2 h-2 rounded-sm"
+                                                    className="size-2 rounded-sm"
                                                     style={{
                                                         backgroundColor: CHART_COLORS.absent,
                                                     }}
                                                 />
-                                                <span className="text-gray-400">Absent:</span>
-                                                <span className="font-semibold text-gray-700">
+                                                <span className="text-zinc-400">Absent:</span>
+                                                <span className="font-semibold text-zinc-700">
                                                     {group.absent}
                                                 </span>
                                             </div>
                                             <div className="flex items-center gap-1">
                                                 <div
-                                                    className="w-2 h-2 rounded-sm"
+                                                    className="size-2 rounded-sm"
                                                     style={{
                                                         backgroundColor: CHART_COLORS.leave,
                                                     }}
                                                 />
-                                                <span className="text-gray-400">Leave:</span>
-                                                <span className="font-semibold text-gray-700">
+                                                <span className="text-zinc-400">Leave:</span>
+                                                <span className="font-semibold text-zinc-700">
                                                     {group.leave}
                                                 </span>
                                             </div>

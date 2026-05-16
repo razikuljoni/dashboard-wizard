@@ -6,7 +6,7 @@ import theme from "../../antd.theme.json";
 
 const Providers = ({ children }) => (
     <Provider store={store}>
-        <PersistGate loading={<div>Loading...</div>} persistor={persistor}>
+        <PersistGate loading={<div>Loading…</div>} persistor={persistor}>
             <ConfigProvider theme={{ ...theme, algorithm: [] }}>
                 <App>{children}</App>
             </ConfigProvider>

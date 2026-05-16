@@ -57,22 +57,22 @@ const PmmDashboardMap = ({ data, state, setState }) => {
     );
 
     useEffect(() => {
+        const timerIds = [];
+
         if (data?.length) {
-            const timers = [];
-            const animatedList = [];
-
-            data.forEach((marker, index) => {
-                const timer = setTimeout(() => {
-                    animatedList.push(marker);
-                    setAnimatedMarkers([...animatedList]);
+            for (let i = 0; i < data.length; i++) {
+                const id = setTimeout(() => {
+                    setAnimatedMarkers(prev => [...prev, data[i]]);
                 }, Math.random() * 1000);
-                timers.push(timer);
-            });
-
-            return () => {
-                timers.forEach(clearTimeout);
-            };
+                timerIds.push(id);
+            }
         }
+
+        return () => {
+            for (let i = 0; i < timerIds.length; i++) {
+                clearTimeout(timerIds[i]);
+            }
+        };
     }, [data]);
 
     const handleCloseInfoWindow = () => {
@@ -97,7 +97,7 @@ const PmmDashboardMap = ({ data, state, setState }) => {
                 >
                     {animatedMarkers?.map((marker, index) => (
                         <AdvancedMarker
-                            key={`marker-${marker?.lat}-${marker?.lon}-${index}`}
+                            key={`marker-${marker?.lat}-${marker?.lon}`}
                             position={{
                                 lat: Number(marker?.lat),
                                 lng: Number(marker?.lon),

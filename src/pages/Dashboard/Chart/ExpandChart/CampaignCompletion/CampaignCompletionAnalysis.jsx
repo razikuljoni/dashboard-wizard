@@ -1,6 +1,5 @@
 import db from "@/data/db.json";
-import { Col, Modal, Row, Spin } from "antd";
-import { useState } from "react";
+import { Col, Modal, Row } from "antd";
 import ExpandCommonHeader from "../ExpandHeader";
 import CampaignCoverageByDate from "./CampaignCoverageByDate";
 import CampaignCoverageByGeo from "./CampaignCoverageByGeo";
@@ -11,8 +10,6 @@ export default function CampaignCompletionAnalysis({ isModalOpen, setExpandedCha
     const handleCancel = () => {
         setExpandedChart(false);
     };
-
-    const [isLoading, setIsLoading] = useState(false);
 
     return (
         <Modal
@@ -33,35 +30,27 @@ export default function CampaignCompletionAnalysis({ isModalOpen, setExpandedCha
                     onClose={handleCancel}
                 />
                 <div className="mt-5">
-                    {isLoading ? (
-                        <div className="flex justify-center items-center h-[500px]">
-                            <Spin size="large"></Spin>
-                        </div>
-                    ) : (
-                        <>
-                            <CampaignCoverageByDate
-                                data={db?.campaign_completion_analysis?.coverageByDate}
+                    <CampaignCoverageByDate
+                        data={db?.campaign_completion_analysis?.coverageByDate}
+                    />
+                    <CampaignCoverageByGeo
+                        data={db?.campaign_completion_analysis?.geoCoverageByDay}
+                    />
+                    <Row gutter={[5, 5]}>
+                        <Col span={12}>
+                            <GeoCoverage
+                                data={db?.campaign_completion_analysis?.coverageByGeo}
                             />
-                            <CampaignCoverageByGeo
-                                data={db?.campaign_completion_analysis?.geoCoverageByDay}
+                        </Col>
+                        <Col span={12}>
+                            <CumalativeOutletCoverage
+                                data={
+                                    db?.campaign_completion_analysis
+                                        ?.cumulativeOutletCoverage
+                                }
                             />
-                            <Row gutter={[5, 5]}>
-                                <Col span={12}>
-                                    <GeoCoverage
-                                        data={db?.campaign_completion_analysis?.coverageByGeo}
-                                    />
-                                </Col>
-                                <Col span={12}>
-                                    <CumalativeOutletCoverage
-                                        data={
-                                            db?.campaign_completion_analysis
-                                                ?.cumulativeOutletCoverage
-                                        }
-                                    />
-                                </Col>
-                            </Row>
-                        </>
-                    )}
+                        </Col>
+                    </Row>
                 </div>
             </div>
         </Modal>

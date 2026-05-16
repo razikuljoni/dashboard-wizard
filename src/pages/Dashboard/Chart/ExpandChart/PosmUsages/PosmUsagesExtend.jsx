@@ -1,5 +1,5 @@
 import { Modal } from "antd";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ExpandCommonHeader from "../ExpandHeader";
 
 import Chart from "react-google-charts";
@@ -9,14 +9,12 @@ export default function PosmUsagesExtend({ isModalOpen, setExpandedChart, data, 
     const [newData, setNewData] = useState([]);
     const [chartKey, setChartKey] = useState(0);
 
-    useEffect(() => {
-        if (isModalOpen) {
-            setChartKey(prevKey => prevKey + 1); // Update key to force remount
-            setTimeout(() => {
-                setNewData(data);
-            }, 100);
+    const handleModalOpen = (open) => {
+        if (open) {
+            setChartKey(prevKey => prevKey + 1);
+            setNewData(data);
         }
-    }, [isModalOpen, data]);
+    };
 
     const handleCancel = () => {
         setExpandedChart(false);
@@ -26,6 +24,7 @@ export default function PosmUsagesExtend({ isModalOpen, setExpandedChart, data, 
         <Modal
             open={isModalOpen}
             onCancel={handleCancel}
+            afterOpenChange={handleModalOpen}
             footer={null}
             closable={false}
             styles={{
@@ -55,7 +54,7 @@ export default function PosmUsagesExtend({ isModalOpen, setExpandedChart, data, 
                                     key={chartKey} // Force remount of the chart
                                     width="100%"
                                     chartType="ColumnChart"
-                                    loader={<p>Loading...</p>}
+                                    loader={<p>Loading…</p>}
                                     data={newData}
                                     options={{
                                         backgroundColor: {

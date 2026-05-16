@@ -1,5 +1,5 @@
 import ReactECharts from "echarts-for-react";
-import { useEffect, useState } from "react";
+import { useMemo } from "react";
 import ChartHeader from "./ChartHeader";
 
 const TrendLineChart = ({
@@ -11,18 +11,10 @@ const TrendLineChart = ({
     showPercentage = false,
     color = "#E362B0",
 }) => {
-    const [chartData, setChartData] = useState([]);
-
-    useEffect(() => {
-        if (data) {
-            setChartData(
-                data?.map(x => ({
-                    label: x[labelKey],
-                    value: x[dataKey],
-                }))
-            );
-        }
-    }, [data, dataKey, labelKey]);
+    const chartData = useMemo(
+        () => data?.map(x => ({ label: x[labelKey], value: x[dataKey] })) ?? [],
+        [data, dataKey, labelKey]
+    );
 
     // if (!data?.length) return null;
 

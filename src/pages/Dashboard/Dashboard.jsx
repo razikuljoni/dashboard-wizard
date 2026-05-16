@@ -24,7 +24,7 @@ const Dashboard = () => {
     const isLoading = false;
 
     return (
-        <div className="p-10 bg-slate-50">
+        <div className="p-10 bg-zinc-50">
             <Row gutter={[16, 16]}>
                 {/* attendance chart */}
                 {dashboardWidgets.find(x => x === "Attendance") ? (

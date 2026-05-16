@@ -36,9 +36,10 @@ const StrikeRateByDateTable = ({ data, title, id }) => {
         const dayKeys = new Set(rawData?.map(entry => entry.day));
 
         dayKeys.forEach(day => {
-            const dayValues = rawData
-                .filter(entry => entry.day === day)
-                .map(entry => entry.average);
+            const dayValues = rawData.reduce((acc, entry) => {
+                if (entry.day === day) acc.push(entry.average);
+                return acc;
+            }, []);
             const dayAverage = (
                 dayValues?.reduce((sum, val) => sum + val, 0) / dayValues.length
             ).toFixed(2);

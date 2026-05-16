@@ -5,7 +5,7 @@ const ExpandCommonHeader = ({ title, onBack, onClose }) => {
         <div className="flex items-center justify-between rounded-t-lg">
             {" "}
             {/* Added rounded top corners */}
-            <button onClick={onBack} className="text-gray-800 mr-4 hover:text-gray-900">
+            <button onClick={onBack} className="text-zinc-800 mr-4 hover:text-zinc-900">
                 {" "}
                 {/* Added hover effect */}
                 &lt; Back
@@ -13,7 +13,7 @@ const ExpandCommonHeader = ({ title, onBack, onClose }) => {
             <h2 className="text-xl font-semibold">{title}</h2>
             <button
                 onClick={onClose}
-                className="bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center hover:bg-red-700 focus:outline-none"
+                className="bg-red-500 text-white rounded-full size-8 flex items-center justify-center hover:bg-red-700 focus:outline-none"
             >
                 {" "}
                 {/* Improved close button style */}X

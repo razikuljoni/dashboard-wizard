@@ -57,7 +57,7 @@ const ChannelWiseScan = ({ data }) => {
                                 width="100%"
                                 height="230px"
                                 chartType="ColumnChart"
-                                loader={<p>Loading...</p>}
+                                loader={<p>Loading…</p>}
                                 data={newData}
                                 options={{
                                     backgroundColor: {
@@ -97,7 +97,7 @@ const ChannelWiseScan = ({ data }) => {
                                 rootProps={{ "data-testid": "1" }}
                             />
                         ) : (
-                            <p style={{ padding: 10 }}>Loading...</p>
+                            <p style={{ padding: 10 }}>Loading…</p>
                         )}
                     </div>
                 )}

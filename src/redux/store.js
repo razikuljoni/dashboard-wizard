@@ -61,6 +61,4 @@ export const store = configureStore({
 
 export const persistor = persistStore(store);
 
-export const AppStore = store;
-export const RootState = store.getState();
-export const AppDispatch = store.dispatch;
+

@@ -73,18 +73,18 @@ const OverlappingBubbles = ({ data }) => {
                     {!isMinimized && (
                         <>
                             <div className="flex justify-center pt-5">
-                                <div className="relative w-40 h-40">
+                                <div className="relative size-40">
                                     <div className="flex justify-center items-center">
-                                        <div className="flex h-32 w-32 items-center justify-center pl-10 rounded-full bg-[#FBBF24] text-gray-700 ml-4">
+                                        <div className="flex size-32 items-center justify-center pl-10 rounded-full bg-[#FBBF24] text-zinc-700 ml-4">
                                             {Math.round(batSurfaceAreaAvg || 0)}%
                                         </div>
-                                        <div className="absolute left-[26px] top-1 flex h-14 w-14 items-start justify-center pt-2 rounded-full border border-white bg-[#8B5CF6] text-white">
+                                        <div className="absolute left-[26px] top-1 flex size-14 items-start justify-center pt-2 rounded-full border border-white bg-[#8B5CF6] text-white">
                                             {Math.round(pmiSurfaceAreaAvg || 0)}%
                                         </div>
-                                        <div className="absolute left-[5px] top-10 z-10 flex h-[75px] w-[75px] items-center justify-center rounded-full border border-white bg-[#60A5FA] text-white">
+                                        <div className="absolute left-[5px] top-10 z-10 flex size-[75px] items-center justify-center rounded-full border border-white bg-[#60A5FA] text-white">
                                             {Math.round(jtiSurfaceAreaAvg || 0)}%
                                         </div>
-                                        <div className="absolute left-8 top-[6.2rem] flex h-12 w-12 items-center justify-center rounded-full border border-white bg-[#93C5FD] text-white">
+                                        <div className="absolute left-8 top-[6.2rem] flex size-12 items-center justify-center rounded-full border border-white bg-[#93C5FD] text-white">
                                             {Math.round(aktcSurfaceAreaAvg || 0)}%
                                         </div>
                                     </div>
@@ -93,18 +93,18 @@ const OverlappingBubbles = ({ data }) => {
                                     </div>
                                 </div>
 
-                                <div className="relative w-40 h-40">
+                                <div className="relative size-40">
                                     <div className="flex justify-center items-center">
-                                        <div className="flex h-32 w-32 items-center justify-start pl-8 rounded-full bg-[#FBBF24] text-gray-700 mr-4">
+                                        <div className="flex size-32 items-center justify-start pl-8 rounded-full bg-[#FBBF24] text-zinc-700 mr-4">
                                             {Math.round(batCountAvg || 0)}%
                                         </div>
-                                        <div className="absolute right-[26px] top-1 flex h-14 w-14 items-start pt-2 justify-center rounded-full border border-white bg-[#8B5CF6] text-white">
+                                        <div className="absolute right-[26px] top-1 flex size-14 items-start pt-2 justify-center rounded-full border border-white bg-[#8B5CF6] text-white">
                                             {Math.round(pmiCountAvg || 0)}%
                                         </div>
-                                        <div className="absolute right-[5px] top-10 z-10 flex h-[75px] w-[75px] items-center justify-center rounded-full border border-white bg-[#60A5FA] text-white">
+                                        <div className="absolute right-[5px] top-10 z-10 flex size-[75px] items-center justify-center rounded-full border border-white bg-[#60A5FA] text-white">
                                             {Math.round(jtiCountAvg || 0)}%
                                         </div>
-                                        <div className="absolute right-8 top-[6.2rem] flex h-12 w-12 items-center justify-center rounded-full border border-white bg-[#93C5FD] text-white">
+                                        <div className="absolute right-8 top-[6.2rem] flex size-12 items-center justify-center rounded-full border border-white bg-[#93C5FD] text-white">
                                             {Math.round(aktcCountAvg || 0)}%
                                         </div>
                                     </div>
@@ -113,11 +113,11 @@ const OverlappingBubbles = ({ data }) => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="flex items-center justify-center space-x-4 pt-[18px] mt-5">
-                                {legendData.map((item, index) => (
-                                    <div key={index} className="flex items-center space-x-2">
+                            <div className="flex items-center justify-center gap-4 pt-[18px] mt-5">
+                                {legendData.map(item => (
+                                    <div key={item.label} className="flex items-center gap-2">
                                         <div
-                                            className="w-4 h-4"
+                                            className="size-4"
                                             style={{
                                                 backgroundColor: item.color,
                                             }}

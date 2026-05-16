@@ -2,7 +2,6 @@ import ReactECharts from "echarts-for-react";
 import { useState } from "react";
 import ChartHeader from "./ChartHeader";
 import StrikeRateAnalysis from "./ExpandChart/StrikeRateAnalysis/StrikeRateAnalysis";
-import db from "@/data/db.json";
 
 const ORDERED_LEVELS = ["CM", "MS", "TSA"];
 
@@ -155,39 +154,39 @@ const StrikeRateChart = ({ data }) => {
                                 {strikeRateGroups.map(group => (
                                     <div
                                         key={`${group.label}-summary`}
-                                        className="flex items-center justify-between border-b border-gray-50 pb-0.5 last:border-0"
+                                        className="flex items-center justify-between border-b border-zinc-100 pb-0.5 last:border-0"
                                     >
-                                        <div className="w-12 font-bold text-gray-700">
+                                        <div className="w-12 font-bold text-zinc-700">
                                             {group.label}
                                         </div>
                                         <div className="flex-1 grid grid-cols-3 gap-x-1 items-center ml-2">
                                             <div className="flex items-center gap-1">
-                                                <span className="text-gray-400">Target:</span>
-                                                <span className="font-semibold text-gray-700">
+                                                <span className="text-zinc-400">Target:</span>
+                                                <span className="font-semibold text-zinc-700">
                                                     {group.target}
                                                 </span>
                                             </div>
                                             <div className="flex items-center gap-1">
                                                 <div
-                                                    className="w-2 h-2 rounded-sm"
+                                                    className="size-2 rounded-sm"
                                                     style={{
                                                         backgroundColor: STRIKE_COLORS.achievement,
                                                     }}
                                                 />
-                                                <span className="text-gray-400">Achievement:</span>
-                                                <span className="font-semibold text-gray-700">
+                                                <span className="text-zinc-400">Achievement:</span>
+                                                <span className="font-semibold text-zinc-700">
                                                     {group.achievement}
                                                 </span>
                                             </div>
                                             <div className="flex items-center gap-1">
                                                 <div
-                                                    className="w-2 h-2 rounded-sm"
+                                                    className="size-2 rounded-sm"
                                                     style={{
                                                         backgroundColor: STRIKE_COLORS.remaining,
                                                     }}
                                                 />
-                                                <span className="text-gray-400">Remaining:</span>
-                                                <span className="font-semibold text-gray-700">
+                                                <span className="text-zinc-400">Remaining:</span>
+                                                <span className="font-semibold text-zinc-700">
                                                     {group.remaining}
                                                 </span>
                                             </div>
