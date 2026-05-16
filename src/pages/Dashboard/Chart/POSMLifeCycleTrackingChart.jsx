@@ -3,11 +3,22 @@ import { useEffect, useState } from "react";
 import ChartHeader from "./ChartHeader";
 import PosmLifeCycleTracking from "./ExpandChart/PosmLifeCycleTracking/PosmLifeCycleTracking";
 
+const getInnerBarStyle = (percentage, color) => ({
+    height: "100%",
+    borderRadius: "5px",
+    transition: "width 0.5s ease-in-out",
+    backgroundColor: color,
+    width: `${percentage}%`,
+    position: "absolute",
+    top: 0,
+    left: 0,
+});
+
 const POSMLifeCycleTrackingChart = ({ data: posmLifyCycleData, loading }) => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        setTimeout(() => {
+        const timer = setTimeout(() => {
             setData(
                 posmLifyCycleData?.map(x => ({
                     name: x.name,
@@ -15,6 +26,7 @@ const POSMLifeCycleTrackingChart = ({ data: posmLifyCycleData, loading }) => {
                 })) || []
             );
         }, 0);
+        return () => clearTimeout(timer);
     }, [posmLifyCycleData?.length]);
 
     const ProgressBarContainer = {
@@ -48,17 +60,6 @@ const POSMLifeCycleTrackingChart = ({ data: posmLifyCycleData, loading }) => {
         width: "100%",
         position: "relative",
     };
-
-    const InnerBar = (percentage, color) => ({
-        height: "100%",
-        borderRadius: "5px",
-        transition: "width 0.5s ease-in-out",
-        backgroundColor: color,
-        width: `${percentage}%`,
-        position: "absolute",
-        top: 0,
-        left: 0,
-    });
 
     const Days = {
         fontWeight: "400",
@@ -173,7 +174,7 @@ const POSMLifeCycleTrackingChart = ({ data: posmLifyCycleData, loading }) => {
                                         </div>
                                         <div style={Bar}>
                                             <div
-                                                style={InnerBar(
+                                                style={getInnerBarStyle(
                                                     (item.days / maxValue) * 100,
                                                     item.color
                                                 )}

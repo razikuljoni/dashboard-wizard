@@ -1,22 +1,21 @@
 import { Empty, Spin } from "antd";
 import dayjs from "dayjs";
 import ReactECharts from "echarts-for-react";
-import { useEffect, useState } from "react";
+import { useMemo, useState } from "react";
 import ChartHeader from "./ChartHeader";
 import CampaignCompletionAnalysis from "./ExpandChart/CampaignCompletion/CampaignCompletionAnalysis";
 
-const CampaignCompletionChart = ({ data, remainingCampaignDay, coverage = {}, loading }) => {
-    const [chartDayData, setChartDayData] = useState([]);
-    const [chartData, setChartData] = useState([]);
-    const total = coverage?.covered + coverage?.remaining || 0;
+const EMPTY_COVERAGE = {};
 
-    useEffect(() => {
-        // use timeout for component is mounted before the chart is rendered
-        setTimeout(() => {
-            setChartDayData(data?.map(x => x.day));
-            setChartData(data?.map(x => x.covered));
-        }, 0);
-    }, [data?.length]);
+const CampaignCompletionChart = ({
+    data,
+    remainingCampaignDay,
+    coverage = EMPTY_COVERAGE,
+    loading,
+}) => {
+    const chartDayData = useMemo(() => data?.map(x => x.day) ?? [], [data]);
+    const chartData = useMemo(() => data?.map(x => x.covered) ?? [], [data]);
+    const total = coverage?.covered + coverage?.remaining || 0;
 
     const estimatedEndDay = isNaN(+remainingCampaignDay) ? -1 : remainingCampaignDay - 1;
 

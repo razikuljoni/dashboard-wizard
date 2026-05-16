@@ -15,7 +15,7 @@ import { useDispatch, useSelector } from "react-redux";
 const ChartHeader = ({
     title,
     downloadOptions,
-    setExpandedChart = [],
+    setExpandedChart,
     setIsMinimized,
     isMinimized,
     cssId,
@@ -116,7 +116,7 @@ const ChartHeader = ({
             >
                 {title}
             </span>
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center gap-2">
                 {visibleMinimize && (
                     <Button
                         // type="primary"
@@ -154,12 +154,12 @@ const ChartHeader = ({
                             onClick={handleDownloadClick}
                         />
                         {isDropdownOpen && (
-                            <div className="absolute right-0 mt-2 w-24 bg-white border border-gray-300 rounded shadow-lg z-[999999]">
-                                {downloadOptions.map((option, index) => (
+                            <div className="absolute right-0 mt-2 w-24 bg-white border border-zinc-300 rounded shadow-lg z-[999999]">
+                                {downloadOptions.map(option => (
                                     <button
-                                        key={index}
+                                        key={option}
                                         onClick={() => handleDownloadOptionClick(option)}
-                                        className="block px-4 py-2 w-full text-left hover:bg-gray-100 focus:outline-none"
+                                        className="block px-4 py-2 w-full text-left hover:bg-zinc-100 focus:outline-none"
                                     >
                                         {option}
                                     </button>

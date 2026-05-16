@@ -143,7 +143,7 @@ const POSMAIAnalysisChart = ({ accuracy, data }) => {
                 {!isMinimized && (
                     <>
                         {/* Gauge Chart */}
-                        <div className="flex justify-center items-center px-3 pt-12 pb-4 space-x-4">
+                        <div className="flex justify-center items-center px-3 pt-12 pb-4 gap-4">
                             <div className="flex justify-center">
                                 <ReactECharts
                                     option={chartOption}

@@ -2,6 +2,17 @@ import ChartHeader from "@/pages/Dashboard/Chart/ChartHeader";
 import { Pagination } from "antd";
 import { useEffect, useState } from "react";
 
+const getInnerBarStyle = (percentage, color) => ({
+    height: "100%",
+    borderRadius: "5px",
+    transition: "width 0.5s ease-in-out",
+    backgroundColor: color,
+    width: `${percentage}%`,
+    position: "absolute",
+    top: 0,
+    left: 0,
+});
+
 const PmmMaintenance = ({ data: posmLifyCycleData }) => {
     const colors = [
         "blue",
@@ -54,7 +65,7 @@ const PmmMaintenance = ({ data: posmLifyCycleData }) => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        setTimeout(() => {
+        const timer = setTimeout(() => {
             setData(
                 posmLifyCycleData?.map((x, i) => ({
                     label: x.name,
@@ -64,6 +75,7 @@ const PmmMaintenance = ({ data: posmLifyCycleData }) => {
                 })) || []
             );
         }, 0);
+        return () => clearTimeout(timer);
     }, [posmLifyCycleData?.length]);
 
     // Pagination Configuration
@@ -108,17 +120,6 @@ const PmmMaintenance = ({ data: posmLifyCycleData }) => {
         width: "100%",
         position: "relative",
     };
-
-    const InnerBar = (percentage, color) => ({
-        height: "100%",
-        borderRadius: "5px",
-        transition: "width 0.5s ease-in-out",
-        backgroundColor: color,
-        width: `${percentage}%`,
-        position: "absolute",
-        top: 0,
-        left: 0,
-    });
 
     const Days = {
         fontWeight: "400",
@@ -181,7 +182,7 @@ const PmmMaintenance = ({ data: posmLifyCycleData }) => {
                                     </div>
                                     <div style={Bar}>
                                         <div
-                                            style={InnerBar(
+                                            style={getInnerBarStyle(
                                                 (item.assignedCm / item.totalCm) * 100,
                                                 item.color
                                             )}

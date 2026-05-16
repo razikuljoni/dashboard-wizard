@@ -1,16 +1,13 @@
 // Average Strike Rate By Geography Bar Chart
 import ReactECharts from "echarts-for-react";
-import { useEffect, useState } from "react";
+import { useMemo } from "react";
 import ChartHeader from "../../ChartHeader";
 
 const AverageStrikeRateByGeo = ({ data, title, id }) => {
-    const [chartData, setChartData] = useState([]);
-
-    useEffect(() => {
-        if (data) {
-            setChartData(data.map(x => ({ region: x.demarcation, value: x.average })));
-        }
-    }, [data]);
+    const chartData = useMemo(
+        () => data?.map(x => ({ region: x.demarcation, value: x.average })) ?? [],
+        [data]
+    );
 
     // if (!data?.length) return null;
 

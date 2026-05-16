@@ -1,24 +1,22 @@
 import { Modal } from "antd";
 import ReactECharts from "echarts-for-react";
-import { useEffect, useState } from "react";
+import { useRef, useState } from "react";
 import ChartHeader from "../../ChartHeader";
 import ExpandCommonHeader from "../ExpandHeader";
 
 export default function PosmLifeCycleTracking({ isModalOpen, setExpandedChart, data }) {
     const [newData, setNewData] = useState([]);
-    const [chartKey, setChartKey] = useState(0);
+    const chartKeyRef = useRef(0);
 
     const labels = newData?.map(item => item.label);
     const days = newData?.map(item => item.days);
 
-    useEffect(() => {
-        if (isModalOpen) {
-            setChartKey(prevKey => prevKey + 1); // Update key to force remount
-            setTimeout(() => {
-                setNewData(data);
-            }, 100);
+    const handleModalOpen = (open) => {
+        if (open) {
+            chartKeyRef.current += 1;
+            setNewData(data);
         }
-    }, [isModalOpen, data]);
+    };
 
     const handleCancel = () => {
         setExpandedChart(false);
@@ -107,6 +105,7 @@ export default function PosmLifeCycleTracking({ isModalOpen, setExpandedChart, d
         <Modal
             open={isModalOpen}
             onCancel={handleCancel}
+            afterOpenChange={handleModalOpen}
             footer={null}
             closable={false}
             styles={{

@@ -3,10 +3,6 @@ import ReactECharts from "echarts-for-react";
 import { useState } from "react";
 
 const TotalPmmScan = ({ data }) => {
-    const coverPercentage = Math.round(
-        (100 * data?.scanned) / (data?.scanned + data?.notScanned) || 0
-    );
-
     const total = data?.scanned + data?.notScanned || 0;
 
     const chartOption = {

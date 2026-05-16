@@ -1,17 +1,17 @@
 // CM Present Day to Day Chart using ECharts
 import ReactECharts from "echarts-for-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ChartHeader from "../../ChartHeader";
 
 const CumalativeOutletCoverage = ({ data }) => {
     const [dates, setDates] = useState([]);
     const [values, setValues] = useState([]);
-    const [threshold, setThreshold] = useState(0);
+    const thresholdRef = useRef(0);
 
     useEffect(() => {
         setDates(data?.map(x => x.day));
         setValues(data?.map(x => x.coverage));
-        setThreshold(0);
+        thresholdRef.current = 0;
     }, [data?.length]);
 
     const options = {

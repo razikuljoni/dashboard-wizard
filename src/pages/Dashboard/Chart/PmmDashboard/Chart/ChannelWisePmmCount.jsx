@@ -37,17 +37,17 @@ const ChannelWisePmmCount = ({ data }) => {
                         <div className="flex items-center justify-center h-[85%] w-full">
                             <div className="flex justify-between p-6 w-full text-center">
                                 <div className="flex-1">
-                                    <h2 className="text-4xl font-bold text-gray-800">
+                                    <h2 className="text-4xl font-semibold text-zinc-800">
                                         {data?.find(x => x.name === "TLP Channel")?.count || 0}
                                     </h2>
-                                    <p className="mt-2 text-gray-500">TLP Channel</p>
+                                    <p className="mt-2 text-zinc-500">TLP Channel</p>
                                 </div>
-                                <div className="mx-4 h-16 border-l border-gray-300"></div>
+                                <div className="mx-4 h-16 border-l border-zinc-300"></div>
                                 <div className="flex-1">
-                                    <h2 className="text-4xl font-bold text-gray-800">
+                                    <h2 className="text-4xl font-semibold text-zinc-800">
                                         {data?.find(x => x.name === "GT Channel")?.count || 0}
                                     </h2>
-                                    <p className="mt-2 text-gray-500">GT Channel</p>
+                                    <p className="mt-2 text-zinc-500">GT Channel</p>
                                 </div>
                             </div>
                         </div>
